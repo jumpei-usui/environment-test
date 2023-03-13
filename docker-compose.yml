@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  intel-py:
+    image: "amd64/python:3.8"
+    platform: "linux/x86_64"
+    working_dir: /pyproject
+    volumes:
+      - ./pyproject:/pyproject
+    tty: true
+
+  m1-py:
+    image: "arm64v8/python:3.8"
+    platform: "linux/arm64"
+    working_dir: /pyproject
+    volumes:
+      - ./pyproject:/pyproject
+    tty: true
